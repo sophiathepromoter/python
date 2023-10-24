@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Club Euphoria Welcome Page</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="16b.jpg">
+    <style>
+      body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: black;
+            overflow: hidden;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            width: 70%;
+            text-align: center;
+            position: relative;
+        }
+
+        .marquee p {
+            display: inline-block;
+            margin-right: 100%;
+            color: #00ff00;
+            font-size: 3em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: neonGlow 2s ease-in-out infinite, marqueeScroll 10s linear infinite; /* Change speed here */
+        }
+
+        @keyframes neonGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+                opacity: 0.8;
+            }
+            50% {
+                text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+                opacity: 1;
+            }
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(100%);
+            /* Change the direction by setting transform: translateX(100%) for right-to-left or translateX(-100%) for left-to-right */
+            }
+            100% {
+                transform: translateX(-100%);
+                /* Change the direction by setting transform: translateX(-100%) for left-to-right or translateX(100%) for right-to-left */
+            }
+        }
+
+        .logo {
+            width: 30%;
+            max-height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .marquee {
+                width: 100%;
+            }
+            .logo {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee">
+        <p>Welcome to Club Euphoria One Love</p>
+    </div>
+    <img class="logo" src="love.png" alt="Club Euphoria Logo">
+</body>
+</html>
